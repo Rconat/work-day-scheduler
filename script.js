@@ -30,7 +30,7 @@ var toOrdinalSuffix = num => {
     : int + ordinals[3];
 }
 
-var dateDisplay = $('#currentDay').text("It is " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + " " + year)
+var dateDisplay = $('#currentDay').text("It is " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + ", " + year)
 
 // for loop for each hour of the day you want to include in the scheduler
 for(i=0; i < schedulingHours.length; i++){
