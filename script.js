@@ -5,7 +5,9 @@ var month = d.getMonth()
 var day = d.getDay()
 var dayOfMonth = d.getDate()
 
+var calendar = $('.calendar');
 
+var schedulingHours = ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM']
 
 var monthText = {
     monthName: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -30,18 +32,28 @@ var toOrdinalSuffix = num => {
 
 var dateDisplay = $('#currentDay').text("It is " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + " " + year)
 
-var calendar = $('.calendar');
+// for loop for each hour of the day you want to include in the scheduler
+for(i=0; i < schedulingHours.length; i++){
+    // add hour column
+    var time = $('<div>').addClass('hour').attr('id', schedulingHours[i]).text(schedulingHours[i]);
+    // add text area column
+    var activity = $('<textarea>').addClass('activity').attr('id', schedulingHours[i]).text('Add an event here...');
+    // add save
+    var saveBtn = $('<button>').addClass('saveBtn').attr('id', schedulingHours[i]).text('SAVE');
 
-for(i=0; i<13; i++){
-    var row = $('<div>').addClass('hour').text((i+9) + ":00 AM");
-    var activity = $('<textarea>').addClass('activity').text('activity ' + (i+1));
-    var saveBtn = $('<button>').addClass('saveBtn').text('SAVE');
-
-    calendar.append(row);
+    calendar.append(time);
     calendar.append(activity);
     calendar.append(saveBtn);
 }
 
-//
+$('.saveBtn').on('click', function() {
+    var selectedHour = $(this).attr('id')
+    var selectedActivity = $('textarea#'+ selectedHour)
+    
+    //($('textarea # + selectedHour).attr('id'))
 
-$('.calendar').append(table);
+    console.log(selectedHour)
+    console.log(selectedActivity)
+    
+    // localStorage.setItem('selectedHour', 'selectedActivity')
+})
