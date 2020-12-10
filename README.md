@@ -6,7 +6,7 @@ The purpose of this program is to create a scheduler that anyone can use to plan
 
 This can be used to provide a planner with the hours between 9:00AM and 9:00PM in which a user and input events. Upon clicking the save button, the website will save that data locally to the users device so that next time the page is opened, the events will all remain in their appropriate time slots. Using colors the webpage will also denoted which event block is currently happening(red) as well as which blocks have passed (light-grey) and which have not yet passed (green).
 
-The webpage is hosted on [GitHub](https://rconat.github.io/work-day-scheduler/.).
+The webpage is hosted on [GitHub](https://rconat.github.io/work-day-scheduler/).
 
 You can find the repo on [GitHub](https://github.com/Rconat/work-day-scheduler).
 
