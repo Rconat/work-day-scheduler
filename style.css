@@ -6,7 +6,8 @@ body {
 
 textarea {
   background: transparent;
-  border: none;
+  border-top: 1px solid black;
+  border-bottom: none;
   resize: none;
   color: #242424;
   border-left: 1px solid black;
@@ -17,6 +18,10 @@ textarea {
   font-style: italic;
 }
 
+.calendar {
+  margin-left: 30px;
+  margin-right: 30px;
+}
 
 .jumbotron {
   text-align: center;
@@ -73,7 +78,7 @@ textarea {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
-  padding: 22px;
+  padding: 18px;
   color: white;
   width: 10%;
   float: left;

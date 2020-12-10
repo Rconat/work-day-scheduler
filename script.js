@@ -48,7 +48,7 @@ for(i=0; i < schedulingHours.length; i++){
 
 $('.saveBtn').on('click', function() {
     var selectedHour = $(this).attr('id')
-    var selectedActivity = $('textarea#'+ selectedHour)
+    var selectedActivity = $('textarea[#'+ selectedHour + ']')
     
     //($('textarea # + selectedHour).attr('id'))
 
