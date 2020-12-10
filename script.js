@@ -30,16 +30,18 @@ var toOrdinalSuffix = num => {
 
 var dateDisplay = $('#currentDay').text("It is " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + " " + year)
 
-var table = $('<table>').addClass('mySchedule');
+var calendar = $('.calendar');
 
 for(i=0; i<13; i++){
-    var row = $('<tr>').addClass('hour').text('result ' + (i+1));
-    var activity = $('<tr>').addClass('activity').text('activity ' + (i+1));
-    var saveBtn = $('<tr>').addClass('activity').text('save button ' + (i+1));
+    var row = $('<div>').addClass('hour').text((i+9) + ":00 AM");
+    var activity = $('<textarea>').addClass('activity').text('activity ' + (i+1));
+    var saveBtn = $('<button>').addClass('saveBtn').text('SAVE');
 
-    table.append(row);
-    table.append(activity);
-    table.append(saveBtn);
+    calendar.append(row);
+    calendar.append(activity);
+    calendar.append(saveBtn);
 }
+
+//
 
 $('.calendar').append(table);

@@ -4,14 +4,19 @@ body {
   line-height: 1;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 75%;
+  float: left;
+
 }
+
 
 .jumbotron {
   text-align: center;
@@ -40,6 +45,12 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 15%;
+  float: left;
 }
 
 .past {
@@ -62,7 +73,10 @@ textarea{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
+  padding: 22px;
   color: white;
+  width: 10%;
+  float: left;
 }
 
 .saveBtn i:hover {
