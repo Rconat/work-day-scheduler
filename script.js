@@ -31,9 +31,8 @@ var toOrdinalSuffix = num => {
 }
 
 setInterval(function(){
-    var dateDisplay = $('#currentDay').text("It is " + moment().format('h:mm:ss a') + " on " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + ", " + year)
+    $('#currentDay').text("It is " + moment().format('h:mm:ss a') + " on " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + ", " + year)
 }, 100);
-// var dateDisplay = $('#currentDay').text("It is " + moment().format('h:mm:ss a') + " on " + dayText.dayName[day] + ", " + monthText.monthName[month] + " " + toOrdinalSuffix(dayOfMonth) + ", " + year)
 
 // for loop for each hour of the day you want to include in the scheduler
 for(i=0; i < schedulingHours.length; i++){
@@ -51,12 +50,15 @@ for(i=0; i < schedulingHours.length; i++){
 
 $('.saveBtn').on('click', function() {
     var selectedHour = $(this).attr('id')
-    var selectedActivity = $('textarea[#'+ selectedHour + ']').text()
-    
-    //($('textarea # + selectedHour).attr('id'))
+    var selectedActivity = $('textarea[id="'+ selectedHour + '"]').val()
 
     console.log(selectedHour)
     console.log(selectedActivity)
     
-    // localStorage.setItem('selectedHour', 'selectedActivity')
+    if (selectedActivity == 'Add an event here...') {
+        alert ('add an event to be saved')
+    } else {
+        console.log(selectedActivity + ' will be saved')
+        // localStorage.setItem(selectedHour, selectedActivity)
+    }
 })
